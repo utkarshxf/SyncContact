@@ -29,13 +29,6 @@ class SyncScreenViewModel @Inject constructor(
     val syncProgress = mutableStateOf(0)
 
     fun fetchContacts() {
-        val dummyData = ContactsDTO()
-        dummyData.add(Contacts("John" ," Doe", "123-456-7890"))
-        dummyData.add(Contacts("Jane" ,"Smith", "987-654-3210"))
-        dummyData.add(Contacts("Alice ","Johnson", "555-123-4567"))
-        dummyData.add(Contacts("Bob"," Brown", "444-555-6666"))
-        dummyData.add(Contacts("Charlie"," White", "333-444-5555"))
-        syncContacts(context , dummyData)
         flow {
             emit(Resource.Loading(null))
             try {
