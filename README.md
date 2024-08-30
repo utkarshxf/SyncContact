@@ -1,8 +1,9 @@
 # Trainer Contact Sync App
 
+<img src="https://github.com/user-attachments/assets/4772185c-2a90-46e3-901a-9d119e8e2805"  width="140"/>
+
 ## Overview
 
-<img src="https://github.com/user-attachments/assets/4772185c-2a90-46e3-901a-9d119e8e2805"  width="140"/>
 The **Trainer Contact Sync App** is an Android application designed to help trainers effortlessly sync the contact information of users enrolled in their training sessions directly to their mobile devices. With a single tap, trainers can add all contacts from the database to their device contacts, making it easier to manage communication with users.
 
 ## Features
