@@ -8,20 +8,27 @@ import retrofit2.Response
 abstract class SafeApiRequest {
 
     suspend fun <T : Any> safeApiRequest(call: suspend () -> Response<T>): T {
-        val response = call.invoke()
+        val response = call()
         if (response.isSuccessful) {
-            return response.body()!!
+            response.body()?.let {
+                return it
+            } ?: throw Exception("Response body is null")
         } else {
-            val responseErr = response.errorBody()?.string()
-            val message = StringBuilder()
-            responseErr.let {
-                try {
-                    message.append(JSONObject(it).getString("error"))
-                } catch (e: JSONException) {
-                }
+            val errorMessage = parseError(response)
+            throw Exception(errorMessage)
+        }
+    }
+
+    private fun parseError(response: Response<*>): String {
+        val errorBody = response.errorBody()?.string()
+        return if (!errorBody.isNullOrEmpty()) {
+            try {
+                JSONObject(errorBody).getString("error")
+            } catch (e: Exception) {
+                "Network error occurred"
             }
-            Log.d("TAG", "safeApiRequest: ${message.toString()}")
-            throw Exception(message.toString())
+        } else {
+            "Network error occurred"
         }
     }
 

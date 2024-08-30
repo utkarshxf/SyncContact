@@ -3,8 +3,8 @@ package com.orion.templete.di
 import android.content.Context
 import com.orion.templete.data.network.ApiService
 import com.orion.templete.data.network.ApiService.Companion.baseurl
-import com.orion.templete.data.repository.GetArtworkRepositoryImplementation
-import com.orion.templete.domain.repository.GetArtworkRepository
+import com.orion.templete.data.repository.GetContactsRepositoryImplementation
+import com.orion.templete.domain.repository.GetContactsRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -26,8 +26,8 @@ object  AppModule {
             .create(ApiService::class.java)
     }
     @Provides
-    fun provideRepository(apiService: ApiService):GetArtworkRepository{
-        return GetArtworkRepositoryImplementation(apiService = apiService)
+    fun provideRepository(apiService: ApiService):GetContactsRepository{
+        return GetContactsRepositoryImplementation(apiService = apiService)
     }
 
     @Provides
