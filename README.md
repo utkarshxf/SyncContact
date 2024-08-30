@@ -35,4 +35,4 @@ The application follows a clean architecture, separating concerns across differe
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/utkarshxf/trainer-contact-sync-app.git
+   git clone https://github.com/utkarshxf/SyncContact
