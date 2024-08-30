@@ -18,7 +18,7 @@ The application follows a clean architecture, separating concerns across differe
 - **UI Layer:** Built with Jetpack Compose, the UI handles user interactions and displays syncing progress.
 - **ViewModel:** Manages UI-related data and handles the business logic, including fetching contacts from the repository and adding them to the device.
 - **Repository:** Interfaces with the backend API to fetch the contacts added today.
-- **Backend API:** A RESTful API provides the data for users added to the database today. The backend can be implemented using SQL/NoSQL databases or platforms like Firebase Firestore/RTD.
+- **Backend API:** A RESTful API provides the data for users added to the database today. 
 
 ## Getting Started
 
